@@ -48,3 +48,4 @@ git push -u origin main
 
 ### 🎨 How to Preview Locally
 You can double-click `preview.html` in your file explorer to immediately see the styled profile inside your web browser!
+

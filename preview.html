@@ -3,337 +3,376 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GitHub Profile Preview - Rahul Malvi (@oye-rahul)</title>
-  <!-- GitHub Markdown CSS for Authentic Theme Rendering -->
+  <title>⚡ Next-Gen Animated GitHub Profile — Rahul Malvi (@oye-rahul)</title>
+  <!-- GitHub Markdown CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.5.1/github-markdown-dark.min.css">
   <style>
     :root {
       color-scheme: dark;
+      --bg: #06090f;
+      --surface: #0d1117;
+      --border: #21262d;
+      --accent-cyan: #00f0ff;
+      --accent-purple: #8b5cf6;
+      --text: #c9d1d9;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
     body {
-      background-color: #0d1117;
-      color: #c9d1d9;
+      background-color: var(--bg);
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(0, 240, 255, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(139, 92, 246, 0.08) 0%, transparent 40%);
+      color: var(--text);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
-      margin: 0;
       padding: 24px;
       display: flex;
       flex-direction: column;
       align-items: center;
+      min-height: 100vh;
     }
-    .preview-header {
+
+    /* TOP FLOATING ACTION BAR */
+    .glass-header {
       width: 100%;
-      max-width: 960px;
-      margin-bottom: 20px;
-      padding: 16px 20px;
-      background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(99, 102, 241, 0.1));
-      border: 1px solid rgba(56, 189, 248, 0.2);
-      border-radius: 12px;
+      max-width: 920px;
+      margin-bottom: 24px;
+      padding: 14px 24px;
+      background: rgba(13, 17, 23, 0.75);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(0, 240, 255, 0.25);
+      border-radius: 16px;
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      box-sizing: border-box;
+      gap: 16px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      position: sticky;
+      top: 16px;
+      z-index: 1000;
     }
-    .preview-title {
-      font-size: 16px;
-      font-weight: 600;
-      color: #38bdf8;
+
+    .brand {
       display: flex;
       align-items: center;
-      gap: 8px;
-    }
-    .badge-live {
-      background: #10b981;
-      color: #042f2e;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 2px 8px;
-      border-radius: 999px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    .markdown-body {
-      box-sizing: border-box;
-      width: 100%;
-      max-width: 960px;
-      padding: 40px;
-      background-color: #0d1117;
-      border: 1px solid #30363d;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    }
-    .markdown-body table {
-      border-collapse: collapse;
-      width: 100%;
-      margin: 16px 0;
-    }
-    .markdown-body table td, .markdown-body table th {
-      border: 1px solid #30363d;
-      padding: 16px;
-    }
-    .action-bar {
-      margin-top: 24px;
-      margin-bottom: 30px;
-      display: flex;
       gap: 12px;
     }
+    .brand-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00f0ff, #8b5cf6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      color: #05070a;
+      box-shadow: 0 0 16px rgba(0, 240, 255, 0.5);
+    }
+    .brand-info h1 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .brand-info p {
+      font-size: 12px;
+      color: #8b949e;
+    }
+
+    .btn-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
     .btn {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: #238636;
-      color: #ffffff;
-      padding: 10px 18px;
-      border-radius: 6px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 13px;
       font-weight: 600;
-      font-size: 14px;
+      cursor: pointer;
       text-decoration: none;
-      transition: background 0.2s ease;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
     }
-    .btn:hover {
-      background: #2ea043;
+    .btn-primary {
+      background: linear-gradient(135deg, #0284c7, #6366f1);
+      color: #ffffff;
+      box-shadow: 0 0 18px rgba(2, 132, 199, 0.4);
+    }
+    .btn-primary:hover {
+      box-shadow: 0 0 24px rgba(2, 132, 199, 0.7);
+      transform: translateY(-1px);
     }
     .btn-secondary {
-      background: #21262d;
+      background: #161b22;
       color: #c9d1d9;
-      border: 1px solid #30363d;
+      border-color: #30363d;
     }
     .btn-secondary:hover {
-      background: #30363d;
+      background: #21262d;
+      border-color: #8b949e;
+    }
+
+    /* PREVIEW CONTAINER */
+    .preview-container {
+      width: 100%;
+      max-width: 920px;
+      transition: max-width 0.3s ease;
+    }
+    .preview-container.mobile {
+      max-width: 440px;
+    }
+
+    .markdown-body {
+      background-color: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px 40px;
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.7);
+      transition: padding 0.3s ease;
+    }
+    .mobile .markdown-body {
+      padding: 18px;
+    }
+
+    .markdown-body table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 20px 0;
+      background: #0d1117;
+    }
+    .markdown-body table td, .markdown-body table th {
+      border: 1px solid #30363d;
+      padding: 12px;
+    }
+
+    /* TOAST */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #10b981;
+      color: #042f2e;
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 13.5px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 2000;
+      pointer-events: none;
+    }
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
 <body>
 
-  <div class="preview-header">
-    <div class="preview-title">
-      <span>🚀</span>
-      <span>Live Profile Preview — Rahul Malvi (<strong>oye-rahul</strong>)</span>
-    </div>
-    <span class="badge-live">GitHub Ready</span>
-  </div>
-
-  <article class="markdown-body">
-    
-    <div align="center">
-      <!-- HERO BANNER -->
-      <a href="https://github.com/oye-rahul">
-        <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=1,8,14,20,24&height=220&section=header&text=Rahul%20Malvi&fontSize=52&fontAlignY=36&desc=Frontend%20Developer%20%7C%20Creative%20UI%20Architect%20%7C%20Open-Source%20Builder&descAlignY=58&descAlign=50" width="100%" alt="Rahul Malvi Header Banner" />
-      </a>
-
-      <!-- TYPING SVG SUBTITLE -->
-      <p align="center">
-        <a href="https://github.com/oye-rahul">
-          <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=21&duration=2800&pause=1000&color=38BDF8&center=true&vCenter=true&width=600&lines=Frontend+Developer+%26+Creative+UI+Architect;Creator+of+macOS-web+(DeskTab);Obsessed+with+Fluid+Animations+%26+Micro-Interactions;Transforming+Ideas+Into+Pixel-Perfect+Interfaces;Passionate+Open-Source+Craftsman+%F0%9F%9A%80" alt="Typing SVG" />
-        </a>
-      </p>
-
-      <!-- QUICK STATUS & COUNTER BADGES -->
-      <p align="center">
-        <img src="https://komarev.com/ghpvc/?username=oye-rahul&label=PROFILE+VIEWS&color=0ea5e9&style=for-the-badge&logo=eye" alt="Profile Views" />
-        <img src="https://img.shields.io/github/followers/oye-rahul?label=FOLLOWERS&style=for-the-badge&logo=github&color=6366f1" alt="Followers" />
-        <img src="https://img.shields.io/badge/STATUS-OPEN%20TO%20COLLABS-06b6d4?style=for-the-badge&logo=sparkles&logoColor=white" alt="Status" />
-      </p>
-
-      <!-- SOCIAL CONNECT BUTTONS -->
-      <p align="center">
-        <a href="https://github.com/oye-rahul" target="_blank">
-          <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-        </a>
-        <a href="mailto:malvi.rahul.2005@gmail.com" target="_blank">
-          <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
-        </a>
-        <a href="https://linkedin.com/in/oye-rahul" target="_blank">
-          <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-        </a>
-        <a href="https://twitter.com/oye_rahul" target="_blank">
-          <img src="https://img.shields.io/badge/Twitter/X-000000?style=for-the-badge&logo=x&logoColor=white" alt="Twitter" />
-        </a>
-      </p>
+  <!-- TOP BAR -->
+  <header class="glass-header">
+    <div class="brand">
+      <div class="brand-avatar">RM</div>
+      <div class="brand-info">
+        <h1>Rahul Malvi (@oye-rahul) <span style="font-size: 11px; background: rgba(0,240,255,0.15); border: 1px solid #00f0ff; color: #00f0ff; padding: 2px 7px; border-radius: 99px;">ANIMATED EDITION</span></h1>
+        <p>Live GitHub Profile Preview • SVG Keyframe Motion &amp; Glassmorphism</p>
+      </div>
     </div>
 
-    <hr>
-
-    <h3>💫 About Me</h3>
-
-    <pre><code>{
-  "name": "Rahul Malvi",
-  "handle": "@oye-rahul",
-  "location": "India 🇮🇳",
-  "role": "Frontend Developer & UI Architect",
-  "flagshipProject": "macOS-web (DeskTab)",
-  "passions": ["Modern UI/UX", "Web Operating Systems", "Interactive Motion", "Open Source"],
-  "coreMotto": "Clean code, fluid animations, and pixel-perfect design."
-}</code></pre>
-
-    <ul>
-      <li>👨‍💻 <b>Who I Am</b>: A creative web engineer who loves pushing the boundaries of what browsers can do — building immersive desktop environments, lightning-fast interfaces, and micro-interactions.</li>
-      <li>🚀 <b>Flagship Creation</b>: Creator of <b><a href="https://github.com/oye-rahul/macOS-web">macOS-web</a></b> (DeskTab), a full-fledged macOS/MacBook experience inside your browser built with pure vanilla web tech.</li>
-      <li>🎨 <b>UI Obsession</b>: Dedicated to clean component design, glassmorphism, responsive layouts, and sub-60fps fluid animations.</li>
-      <li>🧠 <b>Exploring & Innovating</b>: Full-stack Next.js applications, AI integrations, intelligent tooling, and modern developer utilities.</li>
-      <li>⚡ <b>Fun Fact</b>: I can spend hours tuning a single <code>cubic-bezier()</code> timing function until a transition feels like magic!</li>
-    </ul>
-
-    <hr>
-
-    <h3>🌟 Project Spotlight</h3>
-
-    <table>
-      <tr>
-        <td width="100%">
-          <div align="center">
-            <h3>💻 <a href="https://github.com/oye-rahul/macOS-web">macOS-web (DeskTab)</a> — Desktop OS in Your Browser</h3>
-            <p><i>Turn any browser new-tab into a sleek, customizable MacBook workspace complete with native-feeling dock, widgets, and app launcher.</i></p>
-            <p>
-              <img src="https://img.shields.io/badge/Built%20With-Pure%20HTML5%20%7C%20CSS3%20%7C%20Vanilla%20JS-38bdf8?style=flat-square" alt="Tech" />
-              <img src="https://img.shields.io/badge/Zero%20Dependencies-Ultra%20Fast-10b981?style=flat-square" alt="Zero Deps" />
-              <img src="https://img.shields.io/badge/Privacy-100%25%20Local-8b5cf6?style=flat-square" alt="Privacy" />
-            </p>
-          </div>
-          <ul>
-            <li>🍏 <b>Authentic macOS Interface</b>: Floating menu bar, interactive system clock, battery indicators, and a responsive magnifying dock.</li>
-            <li>⚡ <b>Spotlight & Quick Launch</b>: Rapid search bar, quick shortcuts to top web platforms, and integrated AI tool launcher panels.</li>
-            <li>🎨 <b>Total Personalization</b>: Custom high-res wallpapers, dynamic video backgrounds, movable widgets, and personalized themes.</li>
-            <li>🔒 <b>Zero Tracking / Pure Performance</b>: Built without heavy framework overhead — lightweight, instant boot, and completely private.</li>
-          </ul>
-          <div align="center">
-            <a href="https://github.com/oye-rahul/macOS-web">
-              <img src="https://img.shields.io/badge/Explore%20Source%20Code-%230D1117?style=for-the-badge&logo=github&logoColor=white" alt="View Repo" />
-            </a>
-            <a href="https://github.com/oye-rahul/macOS-web/stargazers">
-              <img src="https://img.shields.io/badge/%E2%AD%90%20Star%20Project-%23F59E0B?style=for-the-badge&logo=star&logoColor=white" alt="Star Repo" />
-            </a>
-          </div>
-        </td>
-      </tr>
-    </table>
-
-    <hr>
-
-    <h3>🛠️ Technical Arsenal</h3>
-
-    <div align="center">
-      <h4>🌐 Languages & Core Technologies</h4>
-      <a href="https://skillicons.dev">
-        <img src="https://skillicons.dev/icons?i=html,css,js,ts,python&theme=dark" alt="Languages" />
-      </a>
-
-      <h4>🎨 Frontend Frameworks & Styling</h4>
-      <a href="https://skillicons.dev">
-        <img src="https://skillicons.dev/icons?i=react,nextjs,tailwind,bootstrap,vite&theme=dark" alt="Frontend" />
-      </a>
-
-      <h4>⚙️ Backend, APIs & Data</h4>
-      <a href="https://skillicons.dev">
-        <img src="https://skillicons.dev/icons?i=nodejs,express,mongodb,supabase&theme=dark" alt="Backend" />
-      </a>
-
-      <h4>🚀 Tools, Workflow & Design</h4>
-      <a href="https://skillicons.dev">
-        <img src="https://skillicons.dev/icons?i=git,github,vscode,figma,postman,vercel,npm&theme=dark" alt="Tools" />
-      </a>
+    <div class="btn-group">
+      <button class="btn btn-secondary" id="btnViewport" onclick="toggleViewport()">📱 Toggle Mobile View</button>
+      <button class="btn btn-primary" onclick="copyReadme()">📋 Copy README.md</button>
+      <a href="https://github.com/new" target="_blank" class="btn btn-secondary">🚀 Create oye-rahul Repo</a>
     </div>
+  </header>
 
-    <hr>
+  <!-- MARKDOWN RENDER AREA -->
+  <main class="preview-container" id="previewContainer">
+    <article class="markdown-body">
+      
+      <!-- HERO -->
+      <div align="center">
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="./assets/header-animated.svg">
+          <source media="(prefers-color-scheme: light)" srcset="./assets/header-animated.svg">
+          <img src="./assets/header-animated.svg" width="100%" alt="Rahul Malvi - Animated Hero Header" />
+        </picture>
 
-    <h3>📊 GitHub Activity & Metrics</h3>
+        <!-- QUICK STATUS -->
+        <p align="center" style="margin-top: 14px;">
+          <a href="https://github.com/oye-rahul" target="_blank">
+            <img src="https://img.shields.io/badge/GitHub-%40oye--rahul-0D1117?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+          </a>
+          <a href="mailto:malvi.rahul.2005@gmail.com">
+            <img src="https://img.shields.io/badge/Email-Rahul%20Malvi-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+          </a>
+          <a href="https://linkedin.com/in/oye-rahul" target="_blank">
+            <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+          </a>
+          <img src="https://komarev.com/ghpvc/?username=oye-rahul&label=PROFILE+VIEWS&color=0ea5e9&style=for-the-badge&logo=eye" alt="Profile Views" />
+          <img src="https://img.shields.io/github/followers/oye-rahul?label=FOLLOWERS&style=for-the-badge&logo=github&color=8B5CF6" alt="Followers" />
+        </p>
+      </div>
 
-    <div align="center">
-      <table>
-        <tr>
-          <td align="center" width="50%">
-            <img src="https://github-readme-stats.vercel.app/api?username=oye-rahul&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=38bdf8&icon_color=06b6d4&text_color=c9d1d9" alt="Rahul's GitHub Stats" width="100%" />
-          </td>
-          <td align="center" width="50%">
-            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=oye-rahul&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=38bdf8&text_color=c9d1d9" alt="Top Languages" width="100%" />
-          </td>
-        </tr>
-      </table>
+      <hr>
 
-      <p align="center">
-        <img src="https://streak-stats.demolab.com/?user=oye-rahul&theme=tokyonight&hide_border=true&background=0d1117&ring=38bdf8&fire=06b6d4&currStreakNum=38bdf8&sideNums=c9d1d9&dates=8b949e" alt="GitHub Streak" width="95%" />
-      </p>
+      <!-- FLAGSHIP SHOWCASE -->
+      <h3>💻 Flagship Showcase: macOS-web (DeskTab)</h3>
 
-      <p align="center">
-        <img src="https://github-profile-trophy.vercel.app/?username=oye-rahul&theme=tokyonight&no-frame=true&no-bg=true&margin-w=4" alt="GitHub Trophies" />
-      </p>
-    </div>
+      <div align="center">
+        <a href="https://github.com/oye-rahul/macOS-web" target="_blank">
+          <img src="./assets/macos-showcase.svg" width="100%" alt="macOS-web Animated Showcase" />
+        </a>
 
-    <hr>
+        <p align="center" style="margin-top: 14px;">
+          <a href="https://github.com/oye-rahul/macOS-web" target="_blank">
+            <img src="https://img.shields.io/badge/Explore%20macOS--web%20Repository-18181B?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Repo" />
+          </a>
+          <a href="https://github.com/oye-rahul/macOS-web/stargazers" target="_blank">
+            <img src="https://img.shields.io/badge/%E2%AD%90%20Star%20on%20GitHub-F59E0B?style=for-the-badge&logo=star&logoColor=white" alt="Star Repo" />
+          </a>
+        </p>
+      </div>
 
-    <h3>🐍 Contribution Activity Snake</h3>
+      <blockquote>
+        <p><strong>About the Project</strong>: <strong>macOS-web (DeskTab)</strong> transforms standard browser new-tabs into a desktop-grade MacBook workspace. Built natively with pure HTML5, CSS3, and modern Vanilla JS with zero heavy framework overhead, offering a live magnifying dock, desktop widgets, quick spotlight search, dynamic wallpapers, and client-side privacy.</p>
+      </blockquote>
 
-    <div align="center">
-      <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/oye-rahul/oye-rahul/output/github-contribution-grid-snake-dark.svg">
-        <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/oye-rahul/oye-rahul/output/github-contribution-grid-snake.svg">
-        <img alt="GitHub Contribution Snake Animation" src="https://raw.githubusercontent.com/oye-rahul/oye-rahul/output/github-contribution-grid-snake-dark.svg" width="100%">
-      </picture>
-    </div>
+      <hr>
 
-    <hr>
+      <!-- TECH ARSENAL -->
+      <h3>⚡ Technical Arsenal &amp; Core Stack</h3>
 
-    <h3>💡 Philosophy & How I Work</h3>
+      <div align="center">
+        <img src="./assets/tech-matrix.svg" width="100%" alt="Tech Matrix Grid" />
 
-    <details>
-      <summary><b>🔍 Click to expand: Inside My Dev Mindset & Workspace</b></summary>
-      <br>
-      <table>
-        <thead>
+        <br><br>
+
+        <a href="https://skillicons.dev" target="_blank">
+          <img src="https://skillicons.dev/icons?i=html,css,js,ts,react,nextjs,tailwind,vite,nodejs,express,mongodb,python,git,github,vscode,figma&perline=8&theme=dark" alt="Skill Icons Tray" />
+        </a>
+      </div>
+
+      <hr>
+
+      <!-- TELEMETRY HUD -->
+      <h3>📡 Telemetry, Quest &amp; Diagnostics</h3>
+
+      <div align="center">
+        <img src="./assets/telemetry-hud.svg" width="100%" alt="Developer Telemetry HUD" />
+      </div>
+
+      <hr>
+
+      <!-- GITHUB STATS & METRICS -->
+      <h3>📊 Real-Time GitHub Analytics &amp; Activity</h3>
+
+      <div align="center">
+        <table>
           <tr>
-            <th>Principle</th>
-            <th>In Practice</th>
+            <td align="center" width="50%">
+              <img src="https://github-readme-stats.vercel.app/api?username=oye-rahul&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=38bdf8&icon_color=00f0ff&text_color=c9d1d9" alt="GitHub Stats" width="100%" />
+            </td>
+            <td align="center" width="50%">
+              <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=oye-rahul&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=38bdf8&text_color=c9d1d9" alt="Top Languages" width="100%" />
+            </td>
           </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><b>⚡ Performance First</b></td>
-            <td>Write clean, lightweight code. Avoid multi-megabyte bundle dependencies when native APIs can achieve better results with 0ms lag.</td>
-          </tr>
-          <tr>
-            <td><b>🎨 Pixel & Interaction Obsession</b></td>
-            <td>Visual hierarchy, typography, smooth easing curves, and dark mode aren't optional — they define whether users fall in love with software.</td>
-          </tr>
-          <tr>
-            <td><b>🛠️ Pragmatic Engineering</b></td>
-            <td>Pick the right tool for the job. Know when to use pure Vanilla JS for raw speed, and when React/Next.js unlocks scalable architecture.</td>
-          </tr>
-          <tr>
-            <td><b>🌐 Open Source Spirit</b></td>
-            <td>Build in public, share components, and help fellow developers build faster and prettier applications.</td>
-          </tr>
-        </tbody>
-      </table>
-    </details>
+        </table>
 
-    <hr>
+        <p align="center">
+          <img src="https://streak-stats.demolab.com/?user=oye-rahul&theme=tokyonight&hide_border=true&background=0d1117&ring=38bdf8&fire=00f0ff&currStreakNum=38bdf8&sideNums=c9d1d9&dates=8b949e" alt="GitHub Streak" width="95%" />
+        </p>
 
-    <div align="center">
-      <p align="center">
-        <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight" alt="Daily Developer Quote" />
-      </p>
+        <p align="center">
+          <img src="https://github-readme-activity-graph.vercel.app/graph?username=oye-rahul&theme=tokyo-night&hide_border=true&area=true" alt="Activity Graph" width="95%" />
+        </p>
 
-      <a href="#top">
-        <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=24,20,14,8,1&height=120&section=footer" width="100%" alt="Footer Banner" />
-      </a>
+        <p align="center">
+          <img src="https://github-profile-trophy.vercel.app/?username=oye-rahul&theme=tokyonight&no-frame=true&no-bg=true&margin-w=4" alt="GitHub Trophies" />
+        </p>
+      </div>
 
-      <p align="center">
-        <b>Crafted with 💙 by <a href="https://github.com/oye-rahul">Rahul Malvi</a></b><br>
-        <i>"Transforming coffee & code into world-class digital experiences."</i>
-      </p>
+      <hr>
 
-      <p align="center">
+      <!-- CONTRIBUTION SNAKE -->
+      <h3>🐍 Contribution Activity Snake</h3>
+
+      <div align="center">
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/oye-rahul/oye-rahul/output/github-contribution-grid-snake-dark.svg">
+          <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/oye-rahul/oye-rahul/output/github-contribution-grid-snake.svg">
+          <img alt="GitHub Contribution Snake Animation" src="https://raw.githubusercontent.com/oye-rahul/oye-rahul/output/github-contribution-grid-snake-dark.svg" width="100%">
+        </picture>
+      </div>
+
+      <hr>
+
+      <!-- FOOTER -->
+      <div align="center">
         <a href="#top">
-          <img src="https://img.shields.io/badge/⬆️-BACK%20TO%20TOP-%231E293B?style=for-the-badge" alt="Back to Top" />
+          <img src="./assets/footer-animated.svg" width="100%" alt="Cyber Horizon Footer" />
         </a>
-      </p>
-    </div>
 
-  </article>
+        <p align="center" style="margin-top: 14px;">
+          <a href="#top">
+            <img src="https://img.shields.io/badge/▲%20RETURN%20TO%20ORBIT-%230D1117?style=for-the-badge&logoColor=white" alt="Return to Orbit" />
+          </a>
+        </p>
+      </div>
 
-  <div class="action-bar">
-    <a href="https://github.com/new" target="_blank" class="btn">✨ Create Special Repo "oye-rahul"</a>
-    <a href="README.md" class="btn btn-secondary">📄 View Raw README.md</a>
-  </div>
+    </article>
+  </main>
+
+  <div class="toast" id="toast">📋 README.md content copied to clipboard!</div>
+
+  <script>
+    let isMobile = false;
+    function toggleViewport() {
+      isMobile = !isMobile;
+      const container = document.getElementById('previewContainer');
+      const btn = document.getElementById('btnViewport');
+      if (isMobile) {
+        container.classList.add('mobile');
+        btn.textContent = '🖥️ Toggle Desktop View';
+      } else {
+        container.classList.remove('mobile');
+        btn.textContent = '📱 Toggle Mobile View';
+      }
+    }
+
+    async function copyReadme() {
+      try {
+        const res = await fetch('README.md');
+        const text = await res.text();
+        await navigator.clipboard.writeText(text);
+        showToast('✨ README.md copied! Ready to paste into GitHub.');
+      } catch (err) {
+        showToast('⚠️ Please copy directly from README.md');
+      }
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+  </script>
 
 </body>
 </html>
