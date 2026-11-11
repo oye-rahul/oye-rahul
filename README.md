@@ -10,20 +10,21 @@
     <tr style="border: none;">
 
       <!-- LEFT: BIG VIBRANT ANIME GIRLS MOE COUNTER + BIO INTRO -->
-      <td align="left" valign="top" style="border: none; padding: 20px 25px; width: 55%;">
-        <div align="center">
-          <img src="https://count.getloli.com/@oye-rahul?theme=moebooru&padding=5&scale=1.6&pixelated=1&darkmode=0" alt="Moe Counter" height="135" style="image-rendering: pixelated; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));" />
+      <td align="left" valign="top" style="border: none; padding: 15px 25px; width: 55%;">
+        <div align="center" style="margin-bottom: 18px;">
+          <a href="https://github.com/journey-ad/Moe-counter">
+            <img src="https://count.getloli.com/@oye-rahul?theme=moebooru&padding=5" height="185" alt="Moe Counter" style="image-rendering: pixelated; filter: drop-shadow(0 6px 18px rgba(0,0,0,0.6)); display: block; margin: 0 auto;" />
+          </a>
         </div>
-        <br>
         <h1 align="left" style="margin-top: 10px; font-size: 34px; font-weight: 800; color: #ffffff;">Hey, i’m Rahul</h1>
-        <p align="left" style="font-size: 16px; line-height: 1.65; color: #c9d1d9;">
+        <p align="left" style="font-size: 16px; line-height: 1.65; color: #c9d1d9; margin-top: 12px;">
           A machine learning engineer who creates amazing models and also you can call me an AI agent developer... hmmm now I'm thinking to learn SI means Super Intelligence. A machine learning engineer who creates amazing models and also you can call me an AI agent developer...
         </p>
       </td>
 
       <!-- RIGHT: BIG ID CARD WITH SIMPLE ROPE & LOW GENTLE SWAY -->
       <td align="center" valign="top" style="border: none; padding: 10px; width: 45%;">
-        <img src="./assets/hanging-badge.svg" width="320" alt="Rahul Malvi - AI/ML Dev Hanging Badge" />
+        <img src="./assets/hanging-badge.svg" width="340" alt="Rahul Malvi - AI/ML Dev Hanging Badge" />
       </td>
 
     </tr>
@@ -37,22 +38,15 @@
 
 <div align="center">
 
-  <!-- UNIFIED ICON TRAY -->
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=c,python,js,ts,html,css,tailwind,fastapi,flask,pytorch,tensorflow,sklearn,postgres,mongodb,aws,docker,git,github,kubernetes,githubactions,kafka,firebase,netlify,supabase,vercel&perline=12&theme=dark" alt="Tech Stack Icons" />
-  </a>
-
-  <br><br>
-
   <!-- CATEGORIZED BADGE MATRIX -->
   <table align="center" style="border: none; border-collapse: collapse; width: 100%;">
     
     <!-- 1. PROGRAMMING LANGUAGES -->
     <tr style="border: none;">
-      <td align="right" valign="middle" style="border: none; padding: 8px 14px; width: 28%; font-weight: bold; color: #38bdf8;">
+      <td align="right" valign="middle" style="border: none; padding: 10px 16px; width: 28%; font-weight: bold; color: #38bdf8;">
         Programming Languages:
       </td>
-      <td align="left" valign="middle" style="border: none; padding: 8px 14px;">
+      <td align="left" valign="middle" style="border: none; padding: 10px 16px;">
         <img src="https://img.shields.io/badge/C-00599C?style=flat-square&logo=c&logoColor=white" alt="C" />
         <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
         <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript" />
@@ -62,10 +56,10 @@
 
     <!-- 2. FRONTEND DEVELOPMENT -->
     <tr style="border: none;">
-      <td align="right" valign="middle" style="border: none; padding: 8px 14px; font-weight: bold; color: #818cf8;">
+      <td align="right" valign="middle" style="border: none; padding: 10px 16px; font-weight: bold; color: #818cf8;">
         Frontend Development:
       </td>
-      <td align="left" valign="middle" style="border: none; padding: 8px 14px;">
+      <td align="left" valign="middle" style="border: none; padding: 10px 16px;">
         <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
         <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white" alt="CSS3" />
         <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" alt="HTML5" />
@@ -74,10 +68,10 @@
 
     <!-- 3. FRAMEWORKS - BACKEND & AI/ML -->
     <tr style="border: none;">
-      <td align="right" valign="middle" style="border: none; padding: 8px 14px; font-weight: bold; color: #34d399;">
+      <td align="right" valign="middle" style="border: none; padding: 10px 16px; font-weight: bold; color: #34d399;">
         Backend & AI/ML:
       </td>
-      <td align="left" valign="middle" style="border: none; padding: 8px 14px;">
+      <td align="left" valign="middle" style="border: none; padding: 10px 16px;">
         <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI" />
         <img src="https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white" alt="NumPy" />
         <img src="https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white" alt="Pandas" />
@@ -93,10 +87,10 @@
 
     <!-- 4. DATABASES -->
     <tr style="border: none;">
-      <td align="right" valign="middle" style="border: none; padding: 8px 14px; font-weight: bold; color: #f472b6;">
+      <td align="right" valign="middle" style="border: none; padding: 10px 16px; font-weight: bold; color: #f472b6;">
         Databases:
       </td>
-      <td align="left" valign="middle" style="border: none; padding: 8px 14px;">
+      <td align="left" valign="middle" style="border: none; padding: 10px 16px;">
         <img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white" alt="MongoDB" />
         <img src="https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL" />
         <img src="https://img.shields.io/badge/Chroma_DB-FF6B6B?style=flat-square&logo=databricks&logoColor=white" alt="Chroma DB" />
@@ -105,10 +99,10 @@
 
     <!-- 5. DEVOPS -->
     <tr style="border: none;">
-      <td align="right" valign="middle" style="border: none; padding: 8px 14px; font-weight: bold; color: #fbbf24;">
+      <td align="right" valign="middle" style="border: none; padding: 10px 16px; font-weight: bold; color: #fbbf24;">
         DevOps & Cloud:
       </td>
-      <td align="left" valign="middle" style="border: none; padding: 8px 14px;">
+      <td align="left" valign="middle" style="border: none; padding: 10px 16px;">
         <img src="https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazon-aws&logoColor=white" alt="AWS" />
         <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker" />
         <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git" />
@@ -120,10 +114,10 @@
 
     <!-- 6. BACKEND AS A SERVICE -->
     <tr style="border: none;">
-      <td align="right" valign="middle" style="border: none; padding: 8px 14px; font-weight: bold; color: #a78bfa;">
+      <td align="right" valign="middle" style="border: none; padding: 10px 16px; font-weight: bold; color: #a78bfa;">
         BaaS & Deployment:
       </td>
-      <td align="left" valign="middle" style="border: none; padding: 8px 14px;">
+      <td align="left" valign="middle" style="border: none; padding: 10px 16px;">
         <img src="https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black" alt="Firebase" />
         <img src="https://img.shields.io/badge/Netlify-00C7B7?style=flat-square&logo=netlify&logoColor=white" alt="Netlify" />
         <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white" alt="Supabase" />
@@ -137,7 +131,14 @@
 
 ---
 
-<!-- ================= 03. OTHER THINGS BY YOURSELF (PORTFOLIO FOLDERS) ================= -->
+<!-- ================= 03. COMMIT LOG: A YEAR OF BUILDING (IN GREEN) ================= -->
+<div align="center" style="margin: 25px auto;">
+  <img src="./assets/commit-log.svg" width="100%" alt="05 Commit Log • Real GitHub Activity — A year of building, one square at a time." />
+</div>
+
+---
+
+<!-- ================= 04. OTHER THINGS BY YOURSELF (PORTFOLIO FOLDERS) ================= -->
 <div align="center">
 
   <h2>Other things by your sell</h2>
@@ -177,6 +178,9 @@
     </a>
     <a href="mailto:malvi.rahul.2005@gmail.com" target="_blank">
       <img src="./assets/social-email.svg" height="44" alt="Email" />
+    </a>
+    <a href="https://pinterest.com/oye_rahul" target="_blank">
+      <img src="./assets/social-pinterest.svg" height="44" alt="Pinterest" />
     </a>
   </p>
 

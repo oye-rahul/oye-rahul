@@ -3,30 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Big Shiny Buttons — Mail, Instagram, LinkedIn, Portfolio</title>
+  <title>Big Shiny Button - Mail</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,500;600&display=swap" rel="stylesheet">
   <style>
     @property --gradient-angle {
       syntax: "<angle>";
       initial-value: 0deg;
       inherits: false;
     }
-
     @property --gradient-angle-offset {
       syntax: "<angle>";
       initial-value: 0deg;
       inherits: false;
     }
-
     @property --gradient-percent {
       syntax: "<percentage>";
       initial-value: 5%;
       inherits: false;
     }
-
     @property --gradient-shine {
       syntax: "<color>";
       initial-value: white;
@@ -40,62 +36,23 @@
     }
 
     body {
-      background-color: #05070c;
-      background-image: 
-        radial-gradient(circle at 50% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.06) 0%, transparent 50%),
-        radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 50%);
+      background-color: #050505;
       color: #ffffff;
-      font-family: "Inter", sans-serif;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 60px 20px;
+      gap: 30px;
+      font-family: 'Inter', sans-serif;
     }
 
-    /* Container for the stack of buttons */
-    .buttons-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 22px;
-      width: 100%;
-      max-width: 460px;
-    }
-
-    /* Header title */
-    .section-header {
-      text-align: center;
-      margin-bottom: 28px;
-    }
-    .section-header h1 {
-      font-size: 1.85rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      background: linear-gradient(135deg, #ffffff 40%, #94a3b8);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 8px;
-    }
-    .section-header p {
-      font-size: 0.95rem;
-      color: #64748b;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      font-weight: 500;
-    }
-
-    /* ======================================================== */
-    /*   SHINY CTA BUTTON — CORE SPECIFICATION                  */
-    /* ======================================================== */
-    .shiny-cta {
-      --shiny-cta-bg: #07090e;
-      --shiny-cta-bg-subtle: #1e2230;
+    .shiny-cta-big {
+      --shiny-cta-bg: #000000;
+      --shiny-cta-bg-subtle: #1a1818;
       --shiny-cta-fg: #ffffff;
-      --shiny-cta-highlight: #3b82f6;
-      --shiny-cta-highlight-subtle: #93c5fd;
+      --shiny-cta-highlight: #4361ee;
+      --shiny-cta-highlight-subtle: #8484ff;
       --animation: gradient-angle linear infinite;
       --duration: 3s;
       --shadow-size: 3px;
@@ -105,24 +62,16 @@
       position: relative;
       overflow: hidden;
       cursor: pointer;
-      outline-offset: 6px;
-      
-      /* BIG SIZE: Consistent Width, Padding & Typography */
-      width: 100%;
-      min-width: 320px;
-      max-width: 420px;
-      padding: 1.6rem 2.5rem;
-      font-family: "Inter", sans-serif;
-      font-size: 1.55rem;
+      outline-offset: 4px;
+      padding: 1.6rem 3.6rem;
+      font-size: 1.6rem;
       line-height: 1.2;
       font-weight: 600;
-      letter-spacing: -0.01em;
+      letter-spacing: 0.5px;
       border: 2px solid transparent;
       border-radius: 9999px;
       color: var(--shiny-cta-fg);
-      
-      background: 
-        linear-gradient(var(--shiny-cta-bg), var(--shiny-cta-bg)) padding-box,
+      background: linear-gradient(var(--shiny-cta-bg), var(--shiny-cta-bg)) padding-box,
         conic-gradient(
           from calc(var(--gradient-angle) - var(--gradient-angle-offset)),
           transparent,
@@ -131,22 +80,19 @@
           var(--shiny-cta-highlight) calc(var(--gradient-percent) * 3),
           transparent calc(var(--gradient-percent) * 4)
         ) border-box;
-      
-      box-shadow: 
-        inset 0 0 0 1px var(--shiny-cta-bg-subtle),
-        0 16px 36px -12px rgba(0, 0, 0, 0.5);
-      
+      box-shadow: inset 0 0 0 1px var(--shiny-cta-bg-subtle),
+                  0 8px 32px -4px rgba(67, 97, 238, 0.35);
       transition: var(--transition);
-      transition-property: --gradient-angle-offset, --gradient-percent, --gradient-shine, transform, box-shadow;
+      transition-property: --gradient-angle-offset, --gradient-percent, --gradient-shine;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
-      justify-content: center;
+      gap: 16px;
     }
 
-    .shiny-cta::before,
-    .shiny-cta::after,
-    .shiny-cta span::before {
+    .shiny-cta-big::before,
+    .shiny-cta-big::after,
+    .shiny-cta-big span::before {
       content: "";
       pointer-events: none;
       position: absolute;
@@ -156,14 +102,13 @@
       z-index: -1;
     }
 
-    .shiny-cta:active {
+    .shiny-cta-big:active {
       translate: 0 2px;
     }
 
-    /* Dots Pattern */
-    .shiny-cta::before {
+    .shiny-cta-big::before {
       --size: calc(100% - var(--shadow-size) * 3);
-      --position: 3px;
+      --position: 2px;
       --space: calc(var(--position) * 2);
       width: var(--size);
       height: var(--size);
@@ -181,12 +126,11 @@
         black
       );
       border-radius: inherit;
-      opacity: 0.35;
+      opacity: 0.4;
       z-index: -1;
     }
 
-    /* Inner Shimmer */
-    .shiny-cta::after {
+    .shiny-cta-big::after {
       --animation: shimmer linear infinite;
       width: 100%;
       aspect-ratio: 1;
@@ -200,135 +144,45 @@
       opacity: 0.6;
     }
 
-    .shiny-cta span {
+    .shiny-cta-big span {
       z-index: 1;
       display: inline-flex;
       align-items: center;
-      justify-content: center;
       gap: 16px;
-      width: 100%;
     }
 
-    .shiny-cta span::before {
-      --size: calc(100% + 2rem);
+    .shiny-cta-big span::before {
+      --size: calc(100% + 1rem);
       width: var(--size);
       height: var(--size);
-      box-shadow: inset 0 -1ex 3rem 6px var(--shiny-cta-highlight);
+      box-shadow: inset 0 -1ex 2rem 4px var(--shiny-cta-highlight);
       opacity: 0;
       transition: opacity var(--transition);
       animation: calc(var(--duration) * 1.5) breathe linear infinite;
     }
 
-    /* Keyframe Animations */
-    .shiny-cta,
-    .shiny-cta::before,
-    .shiny-cta::after {
+    .shiny-cta-big,
+    .shiny-cta-big::before,
+    .shiny-cta-big::after {
       animation: var(--animation) var(--duration),
         var(--animation) calc(var(--duration) / 0.4) reverse paused;
       animation-composition: add;
     }
 
-    .shiny-cta:is(:hover, :focus-visible) {
-      --gradient-percent: 22%;
+    .shiny-cta-big:is(:hover, :focus-visible) {
+      --gradient-percent: 20%;
       --gradient-angle-offset: 95deg;
       --gradient-shine: var(--shiny-cta-highlight-subtle);
-      transform: translateY(-2px);
     }
 
-    .shiny-cta:is(:hover, :focus-visible),
-    .shiny-cta:is(:hover, :focus-visible)::before,
-    .shiny-cta:is(:hover, :focus-visible)::after {
+    .shiny-cta-big:is(:hover, :focus-visible),
+    .shiny-cta-big:is(:hover, :focus-visible)::before,
+    .shiny-cta-big:is(:hover, :focus-visible)::after {
       animation-play-state: running;
     }
 
-    .shiny-cta:is(:hover, :focus-visible) span::before {
+    .shiny-cta-big:is(:hover, :focus-visible) span::before {
       opacity: 1;
-    }
-
-    /* Common Icon Styles */
-    .btn-icon {
-      width: 32px;
-      height: 32px;
-      flex-shrink: 0;
-      transition: transform 0.3s ease, filter 0.3s ease;
-    }
-
-    .shiny-cta:hover .btn-icon {
-      transform: scale(1.15);
-    }
-
-    /* ======================================================== */
-    /*   THEME 1: MAIL (SAPPHIRE BLUE)                          */
-    /* ======================================================== */
-    .btn-mail {
-      --shiny-cta-highlight: #3b82f6;
-      --shiny-cta-highlight-subtle: #93c5fd;
-    }
-    .btn-mail .btn-icon {
-      stroke: #60a5fa;
-      stroke-width: 2.2;
-      fill: none;
-      filter: drop-shadow(0 0 8px rgba(96, 165, 250, 0.5));
-    }
-    .btn-mail:hover {
-      box-shadow: 
-        inset 0 0 0 1px var(--shiny-cta-bg-subtle),
-        0 20px 48px -10px rgba(59, 130, 246, 0.5);
-    }
-
-    /* ======================================================== */
-    /*   THEME 2: INSTAGRAM (ROSE MAGENTA / ORANGE)             */
-    /* ======================================================== */
-    .btn-instagram {
-      --shiny-cta-highlight: #ec4899;
-      --shiny-cta-highlight-subtle: #f472b6;
-    }
-    .btn-instagram .btn-icon {
-      stroke: #f472b6;
-      stroke-width: 2.2;
-      fill: none;
-      filter: drop-shadow(0 0 8px rgba(236, 72, 153, 0.5));
-    }
-    .btn-instagram:hover {
-      box-shadow: 
-        inset 0 0 0 1px var(--shiny-cta-bg-subtle),
-        0 20px 48px -10px rgba(236, 72, 153, 0.5);
-    }
-
-    /* ======================================================== */
-    /*   THEME 3: LINKEDIN (CYAN / COBALT BLUE)                 */
-    /* ======================================================== */
-    .btn-linkedin {
-      --shiny-cta-highlight: #0284c7;
-      --shiny-cta-highlight-subtle: #38bdf8;
-    }
-    .btn-linkedin .btn-icon {
-      fill: #38bdf8;
-      filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.5));
-    }
-    .btn-linkedin:hover {
-      box-shadow: 
-        inset 0 0 0 1px var(--shiny-cta-bg-subtle),
-        0 20px 48px -10px rgba(2, 132, 199, 0.5);
-    }
-
-    /* ======================================================== */
-    /*   THEME 4: PORTFOLIO (EMERALD / MINT GLOW)               */
-    /* ======================================================== */
-    .btn-portfolio {
-      --shiny-cta-highlight: #10b981;
-      --shiny-cta-highlight-subtle: #6ee7b7;
-    }
-    .btn-portfolio .btn-icon {
-      stroke: #34d399;
-      stroke-width: 2.2;
-      fill: none;
-      filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.5));
-    }
-    .btn-portfolio:hover {
-      box-shadow: 
-        inset 0 0 0 1px var(--shiny-cta-bg-subtle),
-        0 20px 48px -10px rgba(16, 185, 129, 0.5);
     }
 
     @keyframes gradient-angle {
@@ -348,70 +202,20 @@
         scale: 1;
       }
       50% {
-        scale: 1.25;
+        scale: 1.2;
       }
     }
   </style>
 </head>
 <body>
-
-  <div class="section-header">
-    <h1>Connect with Rahul Malvi</h1>
-    <p>Choose an option below</p>
-  </div>
-
-  <div class="buttons-container">
-
-    <!-- 1. MAIL BUTTON -->
-    <a href="mailto:malvi.rahul.2005@gmail.com" class="shiny-cta btn-mail">
-      <span>
-        <!-- Mail Icon -->
-        <svg class="btn-icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-          <rect width="20" height="16" x="2" y="4" rx="2" />
-          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-        </svg>
-        Mail
-      </span>
-    </a>
-
-    <!-- 2. INSTAGRAM BUTTON -->
-    <a href="https://instagram.com/oye_rahul" target="_blank" class="shiny-cta btn-instagram">
-      <span>
-        <!-- Instagram Camera Icon -->
-        <svg class="btn-icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-          <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-          <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-        </svg>
-        Instagram
-      </span>
-    </a>
-
-    <!-- 3. LINKEDIN BUTTON -->
-    <a href="https://linkedin.com/in/oye-rahul" target="_blank" class="shiny-cta btn-linkedin">
-      <span>
-        <!-- LinkedIn 'in' Icon -->
-        <svg class="btn-icon" viewBox="0 0 24 24">
-          <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
-        </svg>
-        LinkedIn
-      </span>
-    </a>
-
-    <!-- 4. PORTFOLIO BUTTON -->
-    <a href="https://github.com/oye-rahul" target="_blank" class="shiny-cta btn-portfolio">
-      <span>
-        <!-- Portfolio / Globe & Orbit Icon -->
-        <svg class="btn-icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10" />
-          <line x1="2" x2="22" y1="12" y2="12" />
-          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-        </svg>
-        Portfolio
-      </span>
-    </a>
-
-  </div>
-
+  <a href="mailto:malvi.rahul.2005@gmail.com" class="shiny-cta-big">
+    <span>
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect width="20" height="16" x="2" y="4" rx="2"/>
+        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+      </svg>
+      Mail
+    </span>
+  </a>
 </body>
 </html>
