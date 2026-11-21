@@ -10,10 +10,10 @@
     <tr style="border: none;">
 
       <!-- LEFT: BIG VIBRANT ANIME GIRLS MOE COUNTER + BIO INTRO -->
-      <td align="left" valign="top" style="border: none; padding: 15px 25px; width: 55%;">
+      <td align="left" valign="top" style="border: none; padding: 15px 25px; width: 50%;">
         <div align="center" style="margin-bottom: 18px;">
           <a href="https://github.com/journey-ad/Moe-counter">
-            <img src="https://count.getloli.com/@oye-rahul?theme=moebooru&padding=5" height="185" alt="Moe Counter" style="image-rendering: pixelated; filter: drop-shadow(0 6px 18px rgba(0,0,0,0.6)); display: block; margin: 0 auto;" />
+            <img src="https://count.getloli.com/@oye-rahul?theme=rule34&padding=5" height="215" alt="Moe Counter" style="image-rendering: pixelated; filter: drop-shadow(0 8px 24px rgba(0,0,0,0.7)); display: block; margin: 0 auto;" />
           </a>
         </div>
         <h1 align="left" style="margin-top: 10px; font-size: 34px; font-weight: 800; color: #ffffff;">Hey, i’m Rahul</h1>
@@ -23,8 +23,8 @@
       </td>
 
       <!-- RIGHT: BIG ID CARD WITH SIMPLE ROPE & LOW GENTLE SWAY -->
-      <td align="center" valign="top" style="border: none; padding: 10px; width: 45%;">
-        <img src="./assets/hanging-badge.svg" width="340" alt="Rahul Malvi - AI/ML Dev Hanging Badge" />
+      <td align="center" valign="top" style="border: none; padding: 10px; width: 50%;">
+        <img src="./assets/hanging-badge.svg" width="440" alt="Rahul Malvi - AI/ML Dev Hanging Badge" />
       </td>
 
     </tr>
